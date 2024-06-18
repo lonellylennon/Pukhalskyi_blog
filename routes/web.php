@@ -32,9 +32,14 @@ Route::group($groupData, function () {
      ->names('blog.admin.posts');
 });
 Route::group(['prefix' => 'digging_deeper'], function () {
-
     Route::get('collections', [DiggingDeeperController::class, 'collections'])
-
         ->name('digging_deeper.collections');
+
+    Route::get('process-video', [DiggingDeeperController::class, 'processVideo'])
+    ->name('digging_deeper.processVideo');
+    
+    Route::get('prepare-catalog', [DiggingDeeperController::class, 'prepareCatalog'])
+    ->name('digging_deeper.prepareCatalog'); 
+
 
 });
